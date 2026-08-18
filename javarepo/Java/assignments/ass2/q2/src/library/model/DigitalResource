@@ -1,0 +1,23 @@
+package library.model;
+
+import library.service.Printable;
+
+public class DigitalResource extends LibraryResource implements Printable {
+
+    public DigitalResource(int id, String title, String author) {
+        super(id, title, author);
+    }
+
+    @Override
+    public double calculateFine(int overdueDays) {
+        return overdueDays * 2;
+    }
+
+    @Override
+    public void printDetails() {
+        System.out.println("DigitalResource ID: " + getResourceId());
+        System.out.println("Topic: " + getTitle());
+        System.out.println("writer: " + getAuthor());
+        
+    }
+}
